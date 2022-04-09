@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "984881332466",
+    "project_id": "gammation-a6052",
+    "storage_bucket": "gammation-a6052.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:984881332466:android:a047d14688aed20ac6d06b",
+        "android_client_info": {
+          "package_name": "com.example.gammation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "984881332466-s52n161qbkbk7aqcb1d6sqijsv1u08ht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD7qHTtjoPngFDAtBuFgzXe8tJX1mFjts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "984881332466-s52n161qbkbk7aqcb1d6sqijsv1u08ht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
