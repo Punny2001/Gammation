@@ -4,7 +4,7 @@ import 'package:gammation/login.dart';
 import 'package:provider/provider.dart';
 import './favorite.dart';
 import './home.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import './report.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,11 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     FavoritePage(),
     Home(),
-    Text(
-      'Report page is under developing',
-      style: optionStyle,
-      textAlign: TextAlign.center,
-    ),
+    ReportScreen(),
   ];
 
   void _onItemTap(int index) {
@@ -66,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(158, 214, 188, 1),
       appBar: AppBar(
-        title: Text("Gammation"),
+        title: Text("Gammation", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
         backgroundColor: Color.fromRGBO(255, 238, 173, 1),
         centerTitle: true,
         foregroundColor: Colors.black,

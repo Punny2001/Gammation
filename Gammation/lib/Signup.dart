@@ -4,14 +4,10 @@ import 'login.dart';
 import 'model/profile.dart';
 
 class SignupScreen extends StatefulWidget {
-  @override
-  _SignupScreenState createstate() => _SignupScreenState();
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
 class _SignupScreenState extends State<SignupScreen> {
