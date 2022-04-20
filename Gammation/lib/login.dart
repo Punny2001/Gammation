@@ -63,9 +63,18 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextField(controller: emailAddress, decoration: InputDecoration(label: Text("Username")),),
+                    TextField(controller: emailAddress,
+                      decoration: InputDecoration(label: Text("Username")),),
                     Padding(padding: EdgeInsets.only(bottom: 20)),
-                    TextField(controller: password, decoration: InputDecoration(label: Text("Password")),),
+                    TextField(controller: password,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        label: Text("Password"),
+                        // suffixIcon: Icon(
+                        //     Icons.visibility
+                        // ),
+                      ),
+                    ),
                   ],
                 ),
               ),
