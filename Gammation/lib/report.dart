@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gammation/main.dart';
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({Key? key}) : super(key: key);
@@ -23,7 +24,34 @@ class _ReportScreenState extends State<ReportScreen> {
           TextField(
             decoration: InputDecoration()
           ),
+          SizedBox(height: 30,),
+          Container(
+            padding: EdgeInsets.only(left: 50, right: 50),
+            child: SizedBox(
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(255, 238, 173, 1),
+                  onPrimary: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return MyApp();
+                      }
+                      )
+                  );
+                },
+                label: Text(
+                  "Submit",
+                  style: TextStyle(fontSize: 20),
+                ),
+                icon: Icon(Icons.send),
+              ),
+            ),
+          ),
         ],
+
       ),
     );
   }

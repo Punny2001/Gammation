@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:gammation/login.dart';
+import 'package:gammation/userprofile.dart';
 import 'package:provider/provider.dart';
 import './favorite.dart';
 import './home.dart';
@@ -57,6 +59,26 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  userAuth(){
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      final email = user.email;
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>
+              userprofilePage(userEmail: email.toString()),
+          )
+      );
+    } else {
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>
+            LoginPage(),
+          )
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,10 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.perm_identity,
               size: 35,
             ),
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
-            ),
+            onPressed: () => userAuth(),
           ),
         ],
       ),

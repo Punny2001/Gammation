@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:gammation/description.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -46,8 +47,11 @@ class _HomeState extends State<Home> {
       //       height: 10.0,
       //     ),
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Color.fromRGBO(158, 214, 188, 1),
           title: Card(
+            color: Color.fromRGBO(158, 214, 188, 1),
+            elevation: 0,
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search ...',
@@ -88,8 +92,25 @@ class _HomeState extends State<Home> {
                         margin: EdgeInsets.fromLTRB(20,5,20,5),
                         child: Column(
                           children: <Widget>[
-                            Image.network(data['Image']),
-                            Text(data['Name']),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) =>
+                                        DescriptionPage(
+                                          imageURL: data['Image'],
+                                          gameName: data['Name'],
+                                          gameDescription: data['Description'],)
+                                    )
+                                );
+                              },
+                              child: Column(
+                                children: [
+                                  Image.network(data['Image']),
+                                  Text(data['Name']),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       );
