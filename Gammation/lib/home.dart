@@ -85,8 +85,10 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       DocumentSnapshot data = snapshot.data!.docs[index];
                       return Card(
-                        child: Row(
+                        margin: EdgeInsets.fromLTRB(20,5,20,5),
+                        child: Column(
                           children: <Widget>[
+                            Image.network(data['Image']),
                             Text(data['Name']),
                           ],
                         ),

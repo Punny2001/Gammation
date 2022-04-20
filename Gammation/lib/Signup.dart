@@ -65,6 +65,10 @@ class _SignupScreenState extends State<SignupScreen> {
                   Center(
                     child: SizedBox(
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Color.fromRGBO(255, 238, 173, 1),
+                          onPrimary: Colors.black,
+                        ),
                         child: Text("Register", style: TextStyle(fontSize: 20)),
                         onPressed: () {
                           register();

@@ -75,6 +75,10 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               SizedBox(
                 child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(255, 238, 173, 1),
+                    onPrimary: Colors.black,
+                  ),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -93,6 +97,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(
                 child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromRGBO(255, 238, 173, 1),
+                    onPrimary: Colors.black,
+                  ),
                   onPressed: () {
                     login();
                   },
