@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
         print('Wrong password provided for that user.');
       }
       showDialog(context: context, builder: (context) => AlertDialog(title: Text("Login Fail!!!"),
-        content: Text(e.message.toString()),
+        content: Text("Incorrect Email or Password."),
         actions: [TextButton(onPressed: () => Navigator.of(context).pop(),
             child: Text("OK"))],));
     }
@@ -70,9 +70,6 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: true,
                       decoration: InputDecoration(
                         label: Text("Password"),
-                        // suffixIcon: Icon(
-                        //     Icons.visibility
-                        // ),
                       ),
                     ),
                   ],

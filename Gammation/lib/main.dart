@@ -9,6 +9,7 @@ import './home.dart';
 import './report.dart';
 
 Future<void> main() async {
+  //Initialized from firebase before run app
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(
@@ -59,8 +60,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  //to check user authentication
   userAuth(){
     final user = FirebaseAuth.instance.currentUser;
+    // Check that user login to our application
     if (user != null) {
       final email = user.email;
       Navigator.push(

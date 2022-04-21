@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'login.dart';
-import 'model/profile.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -33,8 +32,8 @@ class _SignupScreenState extends State<SignupScreen> {
       } else if (e.code == 'email-already-in-use') {
         print('The account already exists for that email.');
       }
-      showDialog(context: context, builder: (context) => AlertDialog(title: Text("Login Fail!!!"),
-        content: Text(e.message.toString()),
+      showDialog(context: context, builder: (context) => AlertDialog(title: Text("Registeration Fail!!!"),
+        content: Text("Please fill in the correct email and password."),
         actions: [TextButton(onPressed: () => Navigator.of(context).pop(),
             child: Text("OK"))],));
     } catch (e) {
